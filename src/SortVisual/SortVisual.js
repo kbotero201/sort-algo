@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './SortVisual.css'
+import MergeSort from '../SortAlgorithims/mergeSort.js'
 
 function SortVisual(){
     const [array, setArray] = useState([])
@@ -15,6 +16,14 @@ function SortVisual(){
     function randomNumber(min, max){
         return Math.floor(Math.random() * (max - min + 1) + min)
     }
+
+    function mergeSort(){
+        const sortedArray = array.slice().sort((a, b) => a - b)
+        //console.log(sortedArray)
+        const mergeSortedArray = "test"
+    }
+
+    //const sortedArray = array.slice().sort((a, b) => a - b)
 
     //const displayArray = array.map((value) => {
     //const heightVlaue = value + "px"
@@ -41,11 +50,15 @@ function SortVisual(){
 
                     </div>
                 ))} 
+                {mergeSort()}
             </div>
             <h1> Here is the array:{/*displayArray*/} </h1>
-            <button onClick={newArray}> Generate array</button>
+            <button onClick={newArray}> Generate array </button>
+            <button onClick={mergeSort}> Merge Sort </button>
+            <MergeSort />
         </div>
     )
 }
 
 export default SortVisual
+

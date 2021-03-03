@@ -23,36 +23,19 @@ function SortVisual(){
         const mergeSortedArray = "test"
     }
 
-    //const sortedArray = array.slice().sort((a, b) => a - b)
-
-    //const displayArray = array.map((value) => {
-    //const heightVlaue = value + "px"
-    //console.log(height)
-    //return(
-    //    <div 
-    //        className="bar"
-    //        style= {{height: heightVlaue}}
-    //        key={value}>
-    //            {value}
-    //    </div>
-    //)})
-
+    const displayArray = array.map((value) => (
+        <div className="bar"
+             style= {{height: `${value}px`}}
+             key={value}>
+        </div>
+    ))
 
     return (
-        <div>
+        <div >
             <div className="container">
-                {array.map((value) => (
-                    <div 
-                        key={value}
-                        style={{height: "700px"}}
-                        className="bar">
-                            
-
-                    </div>
-                ))} 
-                {mergeSort()}
+                {displayArray}
             </div>
-            <h1> Here is the array:{/*displayArray*/} </h1>
+            <h1> Here is the array:{displayArray} </h1>
             <button onClick={newArray}> Generate array </button>
             <button onClick={mergeSort}> Merge Sort </button>
             <MergeSort />

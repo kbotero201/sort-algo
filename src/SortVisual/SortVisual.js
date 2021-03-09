@@ -38,6 +38,9 @@ function SortVisual(){
             <h1> Here is the array:{displayArray} </h1>
             <button onClick={newArray}> Generate array </button>
             <button onClick={mergeSort}> Merge Sort </button>
+            <button onClick={mergeSort}> Quick Sort </button>
+            <button onClick={mergeSort}> Heap Sort </button>
+
             <MergeSort />
         </div>
     )

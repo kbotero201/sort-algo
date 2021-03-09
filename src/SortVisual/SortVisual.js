@@ -18,15 +18,15 @@ function SortVisual(){
     }
 
     function mergeSort(){
-        const sortedArray = array.slice().sort((a, b) => a - b)
+        const sortedArrayResult = array.slice().sort((a, b) => a - b)
         //console.log(sortedArray)
-        const mergeSortedArray = "test"
+        const mergeSortedArray = mergeSort(array)
     }
 
-    const displayArray = array.map((value) => (
+    const displayArray = array.map((value, index) => (
         <div className="bar"
              style= {{height: `${value}px`}}
-             key={value}>
+             key={index}>
         </div>
     ))
 
@@ -44,4 +44,5 @@ function SortVisual(){
 }
 
 export default SortVisual
+
 

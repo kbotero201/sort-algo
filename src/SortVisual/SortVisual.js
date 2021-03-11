@@ -23,6 +23,27 @@ function SortVisual(){
         const mergeSortedArray = mergeSort(array)
     }
 
+    function sliceSort(){
+        const arr = [1,2,3,4,5,6,7,8,9]
+        const result = arr.slice(1)
+        //console.log(result)
+    }
+
+    function concat(){
+        const arr1 = [1,2,3]
+        const arr2 = [14,15,16]
+        const result = arr1.concat(arr2)
+        console.log(result)
+    }
+
+    function power(num,power){
+            let result = 0;
+            for(let i= 0; i < power; i++ ){
+                result = result * (num * num);
+            }
+            return result;
+    }
+
     const displayArray = array.map((value, index) => (
         <div className="bar"
              style= {{height: `${value}px`}}
@@ -37,9 +58,9 @@ function SortVisual(){
             </div>
             <h1> Here is the array:{displayArray} </h1>
             <button onClick={newArray}> Generate array </button>
-            <button onClick={mergeSort}> Merge Sort </button>
-            <button onClick={mergeSort}> Quick Sort </button>
-            <button onClick={mergeSort}> Heap Sort </button>
+            <button onClick={sliceSort}> Slice </button>
+            <button onClick={concat}> Concat </button>
+            <button onClick={power(2,3)}> Power </button>
 
             <MergeSort />
         </div>

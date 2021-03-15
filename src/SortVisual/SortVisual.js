@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './SortVisual.css'
 import mergeSort from '../SortAlgorithims/mergeSort.js'
 import quickSort from '../SortAlgorithims/quickSort.js'
+import bubbleSort from '../SortAlgorithims/bubbleSort.js'
 
 function SortVisual(){
     const [array, setArray] = useState([])
@@ -35,6 +36,14 @@ function SortVisual(){
         console.log(quickSortedResult)
     }
 
+    function handleBubbleSort(){
+        const testSortedResult = array.slice().sort((a, b) => a - b)
+        console.log(testSortedResult)
+
+        const bubbleSortedResult = bubbleSort(array)
+        console.log(bubbleSortedResult)
+    }
+
 
     const displayArray = array.map((value, index) => (
         <div className="bar"
@@ -52,6 +61,7 @@ function SortVisual(){
             <button onClick={newArray}> Generate array </button>
             <button onClick={handleMergeSort}> Merge Sort </button>
             <button onClick={handleQuickSort}> Quick Sort </button>
+            <button onClick={handleBubbleSort}> Bubble Sort </button>
         </div>
     )
 }

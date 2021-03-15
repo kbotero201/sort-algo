@@ -5,10 +5,6 @@ import quickSort from '../SortAlgorithims/quickSort.js'
 
 function SortVisual(){
     const [array, setArray] = useState([])
-    console.log("hello")
-    //const array = [10,24,76,73]
-    console.log(array)
-
 
     function newArray(){
         const array = []

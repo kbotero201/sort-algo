@@ -1,28 +1,34 @@
-import React, {useState} from 'react'
 
-function mergeSort(array){
+function mergeSort(arr){
 
-    // if(array.length === 1) return array 
-    // const middleIdx = Math.floor(array.length / 2)
-    // const firstHalf = mergeSort(array.slice(0, middleIdx))
-    // const secondHalf = mergeSort(array.slice(0, middleIdx))
-    // const sortedArray = []
+        if(arr.length <= 1) return arr;
+        let mid = Math.floor(arr.length/2);
+        let left = mergeSort(arr.slice(0, mid));
+        let right = mergeSort(arr.slice(mid));
+        
+        let results = [];
+        let i = 0;
+        let j = 0;
     
-    // let i = 0
-    // let j = 0
-    // while ( i < firstHalf.length && j < secondHalf.length) {
-    //     if (firstHalf[i] < secondHalf[j]) {
-    //         sortedArray.push(firstHalf[i++])
-    //     } else {
-    //         sortedArray.push(secondHalf[j++])
-    //     }
-    // }
-    // while (i < firstHalf.length) sortedArray.push(firstHalf[i++])
-    // while (j < secondHalf.length) sortedArray.push(secondHalf[j++])
-    
-    // return sortedArray
-
-    return(null)
+        while(i < left.length && j < right.length){
+            if(right[j] > left[i]){
+                results.push(left[i]);
+                i++;
+            } else {
+                results.push(right[j])
+                j++;
+            }
+        }
+        while(i < left.length) {
+            results.push(left[i])
+            i++;
+        }
+        while(j < right.length) {
+            results.push(right[j])
+            j++;
+        }
+        
+        return results;
 
 }
 

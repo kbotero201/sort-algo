@@ -3,6 +3,7 @@ import './SortVisual.css'
 import mergeSort from '../SortAlgorithims/mergeSort.js'
 import quickSort from '../SortAlgorithims/quickSort.js'
 import bubbleSort from '../SortAlgorithims/bubbleSort.js'
+import radixSort from '../SortAlgorithims/radixSort.js'
 
 function SortVisual(){
     const [array, setArray] = useState([])
@@ -16,12 +17,15 @@ function SortVisual(){
         console.log(array)
     }
 
+    //test fully sorted array 
+    const testSortedResult = array.slice().sort((a, b) => a - b)
+    
+
     function randomNumber(min, max){
         return Math.floor(Math.random() * (max - min + 1) + min)
     }
 
     function handleMergeSort(){
-        const testSortedResult = array.slice().sort((a, b) => a - b)
         console.log(testSortedResult)
 
         const mergeSortedResult = mergeSort(array)
@@ -29,7 +33,6 @@ function SortVisual(){
     }
 
     function handleQuickSort(){
-        const testSortedResult = array.slice().sort((a, b) => a - b)
         console.log(testSortedResult)
 
         const quickSortedResult = quickSort(array)
@@ -37,11 +40,18 @@ function SortVisual(){
     }
 
     function handleBubbleSort(){
-        const testSortedResult = array.slice().sort((a, b) => a - b)
         console.log(testSortedResult)
 
         const bubbleSortedResult = bubbleSort(array)
         console.log(bubbleSortedResult)
+    }
+
+
+    function handleRadixSort(){
+        console.log(testSortedResult)
+
+        const radixSortedResult = radixSort(array)
+        console.log(radixSortedResult)
     }
 
 
@@ -62,6 +72,7 @@ function SortVisual(){
             <button onClick={handleMergeSort}> Merge Sort </button>
             <button onClick={handleQuickSort}> Quick Sort </button>
             <button onClick={handleBubbleSort}> Bubble Sort </button>
+            <button onClick={handleRadixSort}> Radix Sort </button>
         </div>
     )
 }

@@ -10,7 +10,7 @@ function SortVisual(){
 
     function newArray(){
         const array = []
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 100; i++) {
             array.push(randomNumber(10, 1000))
         }
         setArray(array)
@@ -19,39 +19,37 @@ function SortVisual(){
 
     //test fully sorted array 
     const testSortedResult = array.slice().sort((a, b) => a - b)
-    
+
 
     function randomNumber(min, max){
         return Math.floor(Math.random() * (max - min + 1) + min)
     }
 
     function handleMergeSort(){
-        console.log(testSortedResult)
-
         const mergeSortedResult = mergeSort(array)
         console.log(mergeSortedResult)
+        console.log(arraysAreSame(testSortedResult, mergeSortedResult))
     }
 
     function handleQuickSort(){
-        console.log(testSortedResult)
-
         const quickSortedResult = quickSort(array)
         console.log(quickSortedResult)
+        console.log(arraysAreSame(testSortedResult, quickSortedResult))
+
     }
 
     function handleBubbleSort(){
-        console.log(testSortedResult)
-
         const bubbleSortedResult = bubbleSort(array)
         console.log(bubbleSortedResult)
+        console.log(arraysAreSame(testSortedResult, bubbleSortedResult))
+
     }
 
 
     function handleRadixSort(){
-        console.log(testSortedResult)
-
         const radixSortedResult = radixSort(array)
         console.log(radixSortedResult)
+        console.log(arraysAreSame(testSortedResult, radixSortedResult))
     }
 
 
@@ -62,6 +60,15 @@ function SortVisual(){
         </div>
     ))
 
+    function arraysAreSame(arr1, arr2){
+       if(arr1.length !== arr2.length) return false 
+       for(let i = 0; i < arr1.length; i++){
+           if(arr1[i] !== arr2[i]){
+               return false
+           }
+       }
+       return true
+    }
     return (
         <div >
             <div className="container">

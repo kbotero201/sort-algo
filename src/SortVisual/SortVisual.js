@@ -4,6 +4,8 @@ import mergeSort from '../SortAlgorithims/mergeSort.js'
 import quickSort from '../SortAlgorithims/quickSort.js'
 import bubbleSort from '../SortAlgorithims/bubbleSort.js'
 import radixSort from '../SortAlgorithims/radixSort.js'
+import selectionSort from '../SortAlgorithims/selectionSort.js'
+
 
 function SortVisual(){
     const [array, setArray] = useState([])
@@ -52,6 +54,12 @@ function SortVisual(){
         console.log(arraysAreSame(testSortedResult, radixSortedResult))
     }
 
+    function handleselectionSort(){
+        const selectionSortedResult = selectionSort(array)
+        console.log(selectionSortedResult)
+        console.log(arraysAreSame(testSortedResult, selectionSortedResult))
+    }
+
 
     const displayArray = array.map((value, index) => (
         <div className="bar"
@@ -60,6 +68,7 @@ function SortVisual(){
         </div>
     ))
 
+    // test if sorting works
     function arraysAreSame(arr1, arr2){
        if(arr1.length !== arr2.length) return false 
        for(let i = 0; i < arr1.length; i++){
@@ -69,6 +78,7 @@ function SortVisual(){
        }
        return true
     }
+
     return (
         <div >
             <div className="container">
@@ -80,10 +90,14 @@ function SortVisual(){
             <button onClick={handleQuickSort}> Quick Sort </button>
             <button onClick={handleBubbleSort}> Bubble Sort </button>
             <button onClick={handleRadixSort}> Radix Sort </button>
+            <button onClick={handleselectionSort}> Selection Sort </button>
+
         </div>
     )
 }
 
 export default SortVisual
+
+
 
 

@@ -5,6 +5,8 @@ import quickSort from '../SortAlgorithims/quickSort.js'
 import bubbleSort from '../SortAlgorithims/bubbleSort.js'
 import radixSort from '../SortAlgorithims/radixSort.js'
 import selectionSort from '../SortAlgorithims/selectionSort.js'
+import insertionSort from '../SortAlgorithims/insertionSort.js'
+
 
 
 function SortVisual(){
@@ -54,10 +56,16 @@ function SortVisual(){
         console.log(arraysAreSame(testSortedResult, radixSortedResult))
     }
 
-    function handleselectionSort(){
+    function handleSelectionSort(){
         const selectionSortedResult = selectionSort(array)
         console.log(selectionSortedResult)
         console.log(arraysAreSame(testSortedResult, selectionSortedResult))
+    }
+
+    function handleInsertionSort(){
+        const insertionSortedResult = insertionSort(array)
+        console.log(insertionSortedResult)
+        console.log(arraysAreSame(testSortedResult, insertionSortedResult)) 
     }
 
 
@@ -90,7 +98,10 @@ function SortVisual(){
             <button onClick={handleQuickSort}> Quick Sort </button>
             <button onClick={handleBubbleSort}> Bubble Sort </button>
             <button onClick={handleRadixSort}> Radix Sort </button>
-            <button onClick={handleselectionSort}> Selection Sort </button>
+            <button onClick={handleSelectionSort}> Selection Sort </button>
+            <button onClick={handleInsertionSort}> Insertion Sort </button>
+
+
 
         </div>
     )
